@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+	{% include("partials/head.html.twig") %}
+	<body>
+		{% include("partials/navbar.html.twig") %}
+		<div style="max-width:1000px;margin: 0 auto; padding:0 1rem"> {% block body %}{% endblock %}
+			{% include "partials/footer.html.twig" %}
+		</div>
+
+		{% include "partials/flash.html.twig" %}
+	</body>
+</html>

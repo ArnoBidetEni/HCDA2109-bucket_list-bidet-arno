@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        #wish{
+            display : flex;
+            flex-direction:column;
+            gap:1rem;
+        }
+        #wish div{
+            display : flex;
+            flex-direction:column;
+            gap:0.5rem;
+        }
+        #wish div input,
+        #wish div button,
+        #wish div select{
+            height : 1.5rem;
+        }
+        #wish div button{
+            align-self:center;
+        }
+    </style>
+    <h1 align=center>Create season</h1>
+    {{ form(wishForm) }}
+
+{% endblock %}

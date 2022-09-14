@@ -1,0 +1,32 @@
+<style>
+	.nav {
+		background-color: var(--bg-light);
+		display: flex;
+		padding: 0.5rem 1rem;
+		gap: 1rem;
+		align-items: center;
+	}
+	img {
+		height: 60px;
+		filter:brightness(1) invert(1);
+	}
+</style>
+<nav class="nav">
+	<a href="{{ path("main") }}">
+		<img src="{{ asset("assets/logo-512.png") }}" alt="Logo Bucket list">
+	</a>
+	<a href="{{ path("main") }}">Home</a>
+	<a href="{{ path("wish_list") }}">Wishes</a>
+	{% if is_granted('ROLE_USER') %}
+		<a href="{{ path("wish_create") }}">Create a wish</a>
+	{% endif %}
+	{% if app.user %}
+		<a class="nav-item nav-link btn btn-primary text-white" href="{{path('security_logout')}}" style="margin-left:auto;">Logout</a>
+	{% else %}
+		<div style="margin-left:auto; display:flex; gap : 1rem;">
+			<a class="nav-item nav-link btn btn-primary text-white" href="{{path('security_login')}}">Login</a>
+			<a class="nav-item nav-link" href="{{path('security_register')}}">Register</a>
+		</div>
+	{% endif %}
+
+</ul></nav>
